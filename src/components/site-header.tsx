@@ -68,22 +68,30 @@ export default function SiteHeader() {
                                         <div className="border border-[rgba(255,255,255,0.1)] size-8 rounded-lg inline-flex items-center justify-center py-1">
                                             <img src={BgLogo.src} alt="logo" className="h-auto w-auto max-h-8 max-w-8 object-contain" />
                                         </div>
-                                        <p className="font-bold">AI Startup Landing Page</p>
+                                        <p className="font-bold">Horix AI</p>
                                     </div>
                                     <div className="mt-8 mb-4">
                                         <nav className="grid gap-4 items-center text-lg">
-                                            <Link href="#features" className="flex items-center gap-3 text-white/70 hover:text-white transition">
-                                                <Feather className="size-6" />
-                                                Features
-                                            </Link>
-                                            <Link href="#" className="flex items-center gap-3 text-white/70 hover:text-white transition">
-                                                <CodeXml className="size-6" />
-                                                Developers
-                                            </Link>
-                                            <Link href="#" className="flex items-center gap-3 text-white/70 hover:text-white transition">
-                                                <Wallet2 className="size-6" />
-                                                Pricing
-                                            </Link>
+                                        <Link href="#features" className="text-white/70 hover:text-white transition"
+                                      onClick={() => {
+                                          const element = document.getElementById('features');
+                                          element?.scrollIntoView({ behavior: 'smooth' });
+                                      }}>
+                                    Features
+                                </Link>
+                                <Link href="#benefits" className="text-white/70 hover:text-white transition"
+                                      onClick={() => {
+                                          const element = document.getElementById('benefits');
+                                          element?.scrollIntoView({ behavior: 'smooth' });
+                                      }}>Benefits</Link>
+
+                                <Link href="#footer" className="text-white/70 hover:text-white transition"
+                                      onClick={() => {
+                                        const element = document.getElementById('footer');
+                                        element?.scrollIntoView({ behavior: 'smooth' });
+                                    }}>
+                                    About
+                                </Link>
                                         </nav>
                                     </div>
                                 </SheetContent>

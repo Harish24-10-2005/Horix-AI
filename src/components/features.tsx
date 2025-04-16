@@ -238,7 +238,7 @@ export function Features() {
                     </div>
                     <motion.div className={"border border-muted rounded-xl p-2.5 mt-3"}>
                         {showComingSoon ? (
-                            <div className="aspect-video bg-gradient-to-br from-purple-900/70 to-indigo-900/50 rounded-lg relative overflow-hidden flex flex-col items-center justify-center text-center p-8">
+                            <div className="aspect-video bg-gradient-to-br from-purple-900/70 to-indigo-900/50 rounded-lg relative overflow-hidden flex flex-col items-center justify-center text-center p-4 sm:p-6 md:p-8">
                                 <motion.div 
                                     initial={{ scale: 0.8, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
@@ -256,15 +256,15 @@ export function Features() {
                                     initial={{ y: 20, opacity: 0 }}
                                     animate={{ y: 0, opacity: 1 }}
                                     transition={{ duration: 0.6 }}
-                                    className="relative z-10"
+                                    className="relative z-10 w-full max-w-xl"
                                 >
-                                    <div className="text-xs inline-block px-3 py-1 rounded-full bg-purple-500/30 text-purple-200 font-semibold mb-4">
+                                    <div className="text-xs inline-block px-3 py-1 rounded-full bg-purple-500/30 text-purple-200 font-semibold mb-3 md:mb-4">
                                         Coming Soon
                                     </div>
-                                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-4">
                                         Premium Features
                                     </h3>
-                                    <p className="text-white/80 max-w-xl mb-8 text-lg">
+                                    <p className="text-white/80 max-w-xl mb-4 sm:mb-6 md:mb-8 text-sm sm:text-base md:text-lg px-2">
                                         Get early access to our smart LLM recommendations and multi-agent workflows. 
                                         Be among the first to unlock the full potential of AI agent management.
                                     </p>
@@ -273,13 +273,13 @@ export function Features() {
                                         <motion.div 
                                             initial={{ scale: 0.9, opacity: 0 }}
                                             animate={{ scale: 1, opacity: 1 }}
-                                            className="bg-green-500/20 text-green-200 px-6 py-4 rounded-lg"
+                                            className="bg-green-500/20 text-green-200 px-4 py-3 sm:px-6 sm:py-4 rounded-lg mx-auto max-w-sm"
                                         >
                                             Thanks! We&apos;ll notify you when Premium Features launch.
                                         </motion.div>
                                     ) : (
-                                        <div>
-                                            <form onSubmit={handleNotifySubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                                        <div className="w-full px-4 sm:px-0">
+                                            <form onSubmit={handleNotifySubmit} className="flex flex-col sm:flex-row gap-2 sm:gap-3 max-w-md mx-auto w-full">
                                                 <input 
                                                     type="email" 
                                                     value={notifyEmail}
@@ -287,18 +287,18 @@ export function Features() {
                                                     placeholder="Enter your email" 
                                                     required
                                                     disabled={isSubmitting}
-                                                    className="flex-1 px-4 py-3 bg-black/30 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+                                                    className="flex-1 px-3 sm:px-4 py-2 sm:py-3 bg-black/30 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500/50 w-full text-sm sm:text-base"
                                                 />
                                                 <button 
                                                     type="submit"
                                                     disabled={isSubmitting}
-                                                    className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 rounded-lg font-medium transition-all disabled:opacity-70"
+                                                    className="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 rounded-lg font-medium transition-all disabled:opacity-70 text-sm sm:text-base whitespace-nowrap"
                                                 >
                                                     {isSubmitting ? "Saving..." : "Notify Me"}
                                                 </button>
                                             </form>
                                             {errorMessage && (
-                                                <div className="mt-3 text-sm text-red-400">
+                                                <div className="mt-2 text-xs sm:text-sm text-red-400 text-center">
                                                     {errorMessage}
                                                 </div>
                                             )}
@@ -306,9 +306,9 @@ export function Features() {
                                     )}
                                 </motion.div>
                                 
-                                <div className="absolute bottom-4 right-4 flex items-center text-xs text-white/50">
-                                    <span className="mr-2 size-2 bg-green-500 rounded-full"></span>
-                                    {Math.floor(Math.random() * 100) + 150} people waiting
+                                <div className="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 flex items-center text-xs text-white/50">
+                                    <span className="mr-1 sm:mr-2 size-1.5 sm:size-2 bg-green-500 rounded-full"></span>
+                                    <span className="text-xs">more people are waiting</span>
                                 </div>
                             </div>
                         ) : tabs[selectedTab].title === "Deploy & Rent" ? (

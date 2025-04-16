@@ -7,7 +7,6 @@ import SiteFooter from "@/components/site-footer";
 import { CallToAction } from "@/components/call-to-action";
 import { Features } from "@/components/features";
 import { Testimonials } from "@/components/testimonials";
-import { GithubIndicator } from "@/components/github-indicator";
 import EnhancedForm from "@/components/enhanced-form"; // Import the new form component
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -123,7 +122,6 @@ export default function Home() {
                 </div>
             </section>
             <Testimonials/>
-            <GithubIndicator/>
             <SiteFooter/>
         </>
     );
